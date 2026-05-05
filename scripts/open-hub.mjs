@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { createServer, get } from "node:http";
 import { extname, join, resolve, relative } from "node:path";
 import { spawn } from "node:child_process";
@@ -92,15 +92,44 @@ function publicConfig() {
       const fallbackPath = hasPath && report.fallbackEntry ? join(report.absolutePath, report.fallbackEntry) : "";
       const hasEntry = Boolean(entryPath && existsSync(entryPath));
       const hasFallback = Boolean(fallbackPath && existsSync(fallbackPath));
+      const workspace = hasPath ? workspaceState(report.absolutePath) : null;
       return {
         ...report,
         exists: hasPath,
         ready: hasEntry,
         hasFallback,
+        workspace,
         openUrl: hasEntry ? `/report/${report.id}/${report.entry}` : hasFallback ? `/report/${report.id}/${report.fallbackEntry}` : "",
         folderUrl: `/folder/${report.id}`
       };
     })
+  };
+}
+
+function countFiles(dir) {
+  if (!existsSync(dir)) return 0;
+  let count = 0;
+  for (const item of readdirSync(dir, { withFileTypes: true })) {
+    if (item.name.startsWith(".")) continue;
+    const fullPath = join(dir, item.name);
+    if (item.isDirectory()) count += countFiles(fullPath);
+    else count += 1;
+  }
+  return count;
+}
+
+function workspaceState(reportPath) {
+  const briefFile = join(reportPath, "0.brief", "brief.md");
+  const researchDir = join(reportPath, "1.research");
+  const rawDir = join(reportPath, "2.assets", "raw");
+  const selectedDir = join(reportPath, "2.assets", "selected");
+  const sourcesFile = join(reportPath, "2.assets", "sources.md");
+  return {
+    brief: existsSync(briefFile),
+    researchFiles: countFiles(researchDir),
+    rawAssets: countFiles(rawDir),
+    selectedAssets: countFiles(selectedDir),
+    sources: existsSync(sourcesFile)
   };
 }
 

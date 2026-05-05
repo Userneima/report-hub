@@ -13,7 +13,8 @@ Use this skill for web-native presentation reports, especially `report-hub/repor
 2. Map the report into 4-6 scoring/narrative modules before editing pages.
 3. For every thin page, actively enrich with verified facts, diagrams, comparisons, scenarios, evidence boundaries, or concise tables.
 4. Implement in the existing report structure; avoid creating a new repository or desktop launcher.
-5. Validate by rendering/opening the report, not only by reading code.
+5. Keep research notes and user-provided assets inside the report workspace before editing slides.
+6. Validate by rendering/opening the report, not only by reading code.
 
 ## Slide Quality Rules
 
@@ -33,6 +34,10 @@ Use this skill for web-native presentation reports, especially `report-hub/repor
 ## File Rules
 
 - Main report source lives under `reports/<report-id>/`.
+- Start each report from `0.brief/brief.md`, then keep research in `1.research/notes.md`.
+- User-downloaded images, PDFs, videos, and screenshots go first into `2.assets/raw/`.
+- Selected assets go into `2.assets/selected/`; final page-loaded assets go into `public/media/`.
+- Record external asset sources and usage status in `2.assets/sources.md`.
 - Use `report-hub.config.json` as the source of truth for title, path, entry, and commands.
 - Keep `dist/` when the report must open from the hub without rebuilding.
 - Do not keep per-report `.app`, `.command`, `.bat`, `.ps1`, screenshots, dev-server logs, `.DS_Store`, or duplicate handoff notes.

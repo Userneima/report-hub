@@ -10,6 +10,7 @@
 npm run hub
 npm run check
 npm run audit
+npm run prepare-workspaces
 npm run list
 npm run build -- smart-glasses
 npm run archive -- smart-glasses
@@ -51,6 +52,19 @@ npm run new-report -- ai-product-review AI 产品调研报告
 
 脚本会自动创建 `reports/<report-id>/`，并把配置写入 `report-hub.config.json`。
 
+## 资料与素材工作流
+
+以后制作新报告时，资料不要散落在桌面或临时下载目录。固定流程如下：
+
+1. `0.brief/brief.md`: 写主题、受众、评分点、叙事模块和页面规划。
+2. `1.research/notes.md`: 放 AI 初步填充、调研摘录、参考链接和待核验事实。
+3. `2.assets/raw/`: 放用户手动下载的原始图片、视频、PDF 或截图。
+4. `2.assets/selected/`: 放 AI 筛选、重命名、确认会进入页面的素材。
+5. `2.assets/sources.md`: 记录素材来源 URL、用途、状态和备注。
+6. `public/media/`: 只放页面最终实际加载的媒体资源。
+
+这个结构吸收了旧 `autoresearch-cursor` 的有效部分：保留“资料收件箱”和“来源索引”的思想，但不再维护独立搜索应用和后端服务。
+
 ## 报告制作 Skill
 
 已将多份报告的共性沉淀为 `web-ppt-report` skill：
@@ -62,17 +76,4 @@ npm run new-report -- ai-product-review AI 产品调研报告
 
 ## GitHub 统一仓库
 
-目标是把这里作为唯一线上仓库。当前本地已经初始化 git，但还需要一个 GitHub 远程仓库 URL。
-
-推荐远程仓库名：
-
-```bash
-Userneima/report-hub
-```
-
-拿到远程 URL 后执行：
-
-```bash
-git remote add origin https://github.com/Userneima/report-hub.git
-git push -u origin main
-```
+当前统一仓库已推送到 `https://github.com/Userneima/report-hub`。

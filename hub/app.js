@@ -32,6 +32,7 @@ function render() {
 function renderCard(report) {
   const state = stateOf(report);
   const tags = (report.tags || []).map((tag) => `<span>${tag}</span>`).join("");
+  const workspace = renderWorkspace(report.workspace);
   const openButton = report.openUrl
     ? `<a class="primary" href="${report.openUrl}" target="_blank" rel="noreferrer">打开报告</a>`
     : `<button class="primary disabled" disabled>无法打开</button>`;
@@ -54,6 +55,7 @@ function renderCard(report) {
           <h2>${report.title}</h2>
           <p class="subtitle">${report.subtitle || ""}</p>
           <div class="tags">${tags}</div>
+          ${workspace}
         </div>
         <div class="actions">
           ${openButton}
@@ -64,6 +66,20 @@ function renderCard(report) {
       ${note}
     </article>
   `;
+}
+
+function renderWorkspace(workspace) {
+  if (!workspace) return "";
+  const items = [
+    ["brief", workspace.brief ? "ok" : "todo", "Brief"],
+    ["research", workspace.researchFiles > 0 ? "ok" : "todo", `Research ${workspace.researchFiles}`],
+    ["raw", workspace.rawAssets > 0 ? "ok" : "todo", `Raw ${workspace.rawAssets}`],
+    ["selected", workspace.selectedAssets > 0 ? "ok" : "todo", `Selected ${workspace.selectedAssets}`],
+    ["sources", workspace.sources ? "ok" : "todo", "Sources"]
+  ];
+  return `<div class="workspace-status" aria-label="report workspace status">
+    ${items.map(([, state, label]) => `<span class="${state}">${label}</span>`).join("")}
+  </div>`;
 }
 
 async function init() {

@@ -10,6 +10,7 @@
     "archive": "node scripts/report-hub.mjs archive",
     "build": "node scripts/report-hub.mjs build",
     "new-report": "node scripts/new-report.mjs",
-    "audit": "node scripts/audit-reports.mjs"
+    "audit": "node scripts/audit-reports.mjs",
+    "prepare-workspaces": "node scripts/prepare-report-workspace.mjs"
   }
 }
