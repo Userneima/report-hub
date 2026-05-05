@@ -9,6 +9,7 @@
 ```bash
 npm run hub
 npm run check
+npm run audit
 npm run list
 npm run build -- smart-glasses
 npm run archive -- smart-glasses
@@ -49,6 +50,15 @@ npm run new-report -- ai-product-review AI 产品调研报告
 ```
 
 脚本会自动创建 `reports/<report-id>/`，并把配置写入 `report-hub.config.json`。
+
+## 报告制作 Skill
+
+已将多份报告的共性沉淀为 `web-ppt-report` skill：
+
+- 仓库副本：`skills/web-ppt-report/SKILL.md`
+- 本机激活副本：`/Users/yuchao/.agents/skills/web-ppt-report/SKILL.md`
+
+它适用于后续创建、优化、审查网页形式 PPT，重点约束评分点映射、内容补足、中文投影可读性、页面密度与最终 QA。
 
 ## GitHub 统一仓库
 

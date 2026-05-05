@@ -5,6 +5,11 @@ reports/*/.env
 reports/*/.env.*
 reports/**/*.zip
 reports/**/.DS_Store
+reports/**/.screenshots/
+reports/**/.dev-server.*
+reports/**/*.log
+reports/**/*.pid
+reports/**/*.port
 archive/**/*.zip
 *.log
 .hub-server.pid

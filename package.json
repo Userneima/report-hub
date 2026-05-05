@@ -9,6 +9,7 @@
     "list": "node scripts/report-hub.mjs list",
     "archive": "node scripts/report-hub.mjs archive",
     "build": "node scripts/report-hub.mjs build",
-    "new-report": "node scripts/new-report.mjs"
+    "new-report": "node scripts/new-report.mjs",
+    "audit": "node scripts/audit-reports.mjs"
   }
 }

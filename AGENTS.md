@@ -8,6 +8,8 @@ This repository is the single management layer for web-based presentation report
 
 Do not create one new desktop launcher or one new GitHub repository for every report unless there is a clear reason. Prefer adding a report entry to `report-hub.config.json`.
 
+For web-based PPT/report work, use the `web-ppt-report` skill. The repository copy lives at `skills/web-ppt-report/SKILL.md`, and the active local copy is installed under `/Users/yuchao/.agents/skills/web-ppt-report/SKILL.md`.
+
 ## Structure
 
 - `hub/`: the unified browser interface.
@@ -37,6 +39,7 @@ Do not create one new desktop launcher or one new GitHub repository for every re
 ## Maintenance Rules
 
 - Run `npm run check` after editing config or scripts.
+- Run `npm run audit` before committing report structure cleanup.
 - Use `npm run hub` to open the unified launcher.
 - Use `npm run archive` only to create compressed archives; it must not delete source files.
 - Never put secrets, tokens, or private credentials in this repository.
