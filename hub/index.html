@@ -13,12 +13,17 @@
           <p class="label">Unified Web PPT Workspace</p>
           <h1>报告中心</h1>
           <p class="hero-copy">
-            一个入口管理所有网页汇报：打开、检查、归档、沉淀制作规则。以后新增报告优先加入这里，而不是继续堆桌面启动器。
+            当前 4 份网页 PPT 已统一放入 <code>report-hub/reports</code>，并同步到公开仓库 <code>Userneima/report-hub</code>。桌面只保留“报告中心.app”，新报告通过模板脚本创建。
           </p>
+          <div class="facts" aria-label="current workspace facts">
+            <span>4 份报告</span>
+            <span>1 个公开仓库</span>
+            <span>1 个桌面入口</span>
+          </div>
         </div>
         <aside class="status-panel" aria-label="workspace status">
           <span class="status-number" id="reportCount">--</span>
-          <span class="status-text">managed reports</span>
+          <span class="status-text">reports managed</span>
         </aside>
       </section>
 
@@ -33,10 +38,11 @@
 
       <section class="guide">
         <div>
-          <h2>长期规则</h2>
-          <p>新增网页 PPT 时，只需要把项目放入 GitHub 文件夹，再加一条配置。汇报结束后用归档脚本压缩，不直接删除源文件。</p>
+          <h2>新报告流程</h2>
+          <p>以后不要再为每个汇报创建单独仓库或桌面启动器。先用脚本创建报告目录，完成后 build，最后用归档脚本压缩成汇报留档。</p>
         </div>
-        <pre><code>npm run check
+        <pre><code>npm run new-report -- &lt;id&gt; &lt;标题&gt;
+npm run check
 npm run build -- &lt;report-id&gt;
 npm run archive -- &lt;report-id&gt;</code></pre>
       </section>

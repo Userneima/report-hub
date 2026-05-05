@@ -9,12 +9,12 @@
       "path": "reports/smart-glasses",
       "entry": "dist/index.html",
       "fallbackEntry": "index.html",
-      "repo": "https://github.com/Userneima/Smart-Glasses.git",
+      "repo": "https://github.com/Userneima/report-hub.git",
       "status": "active",
       "tags": ["PPT", "AI Glasses", "Vite"],
       "buildCommand": "npm run build",
       "devCommand": "npm run dev -- --port 5185 --strictPort",
-      "notes": "已复制进统一仓库目录；原始线上仓库保留为历史来源，后续以 report-hub 为统一远程。"
+      "notes": "当前主版本位于 reports/smart-glasses，统一同步到 report-hub。"
     },
     {
       "id": "feishu-recorder",
@@ -22,12 +22,12 @@
       "subtitle": "飞书 × 安克 AI 录音豆产品调研报告",
       "path": "reports/feishu-recorder",
       "entry": "dist/index.html",
-      "repo": "",
+      "repo": "https://github.com/Userneima/report-hub.git",
       "status": "active",
       "tags": ["PPT", "Feishu", "Recorder"],
       "buildCommand": "npm run build",
       "devCommand": "npm run dev",
-      "notes": "已复制进统一仓库目录；原始目录没有 .git 远程信息，后续以 report-hub 为统一远程。"
+      "notes": "当前主版本位于 reports/feishu-recorder，统一同步到 report-hub。"
     },
     {
       "id": "agibot-security",
@@ -35,12 +35,12 @@
       "subtitle": "Agibot / Certis embodied security report",
       "path": "reports/agibot-security",
       "entry": "dist/index.html",
-      "repo": "https://github.com/Userneima/agibot-embodied-security-report.git",
+      "repo": "https://github.com/Userneima/report-hub.git",
       "status": "active",
       "tags": ["PPT", "Embodied AI", "Security"],
       "buildCommand": "npm run build",
       "devCommand": "npm run dev",
-      "notes": "已复制进统一仓库目录；原始线上仓库保留为历史来源，后续以 report-hub 为统一远程。"
+      "notes": "当前主版本位于 reports/agibot-security，统一同步到 report-hub。"
     },
     {
       "id": "embodied-robot",
@@ -48,12 +48,12 @@
       "subtitle": "Embodied robot investigation",
       "path": "reports/embodied-robot",
       "entry": "dist/index.html",
-      "repo": "",
+      "repo": "https://github.com/Userneima/report-hub.git",
       "status": "active",
       "tags": ["PPT", "Robot", "Embodied AI"],
       "buildCommand": "npm run build",
       "devCommand": "npm run dev",
-      "notes": "已复制进统一仓库目录；原始目录没有 .git 远程信息，后续以 report-hub 为统一远程。"
+      "notes": "当前主版本位于 reports/embodied-robot，统一同步到 report-hub。"
     }
   ]
 }
