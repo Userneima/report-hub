@@ -52,6 +52,8 @@ npm run new-report -- ai-product-review AI 产品调研报告
 
 脚本会自动创建 `reports/<report-id>/`，并把配置写入 `report-hub.config.json`。
 
+如果要让 AI 从零开始接手一份新报告，可以直接使用 `templates/report-ai-request.md` 里的请求模板。
+
 ## 资料与素材工作流
 
 以后制作新报告时，资料不要散落在桌面或临时下载目录。固定流程如下：
