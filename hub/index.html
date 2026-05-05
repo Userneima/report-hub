@@ -10,20 +10,20 @@
     <main class="shell">
       <section class="hero">
         <div>
-          <p class="label">Unified Web PPT Workspace</p>
+          <p class="label">Local Report Index</p>
           <h1>报告中心</h1>
           <p class="hero-copy">
-            当前 4 份网页 PPT 已统一放入 <code>report-hub/reports</code>，并同步到公开仓库 <code>Userneima/report-hub</code>。桌面只保留“报告中心.app”，新报告通过模板脚本创建。
+            当前 4 份网页 PPT 的主版本都在 <code>report-hub/reports</code>，线上同步到 <code>Userneima/report-hub</code>。这个页面只做三件事：打开报告、检查状态、提示下一步命令。
           </p>
           <div class="facts" aria-label="current workspace facts">
-            <span>4 份报告</span>
-            <span>1 个公开仓库</span>
-            <span>1 个桌面入口</span>
+            <span>reports/ 为唯一工作区</span>
+            <span>桌面只保留报告中心.app</span>
+            <span>新报告用脚本创建</span>
           </div>
         </div>
         <aside class="status-panel" aria-label="workspace status">
           <span class="status-number" id="reportCount">--</span>
-          <span class="status-text">reports managed</span>
+          <span class="status-text">可管理报告</span>
         </aside>
       </section>
 
@@ -39,7 +39,7 @@
       <section class="guide">
         <div>
           <h2>新报告流程</h2>
-          <p>以后不要再为每个汇报创建单独仓库或桌面启动器。先用脚本创建报告目录，完成后 build，最后用归档脚本压缩成汇报留档。</p>
+          <p>固定流程可以减少目录混乱：先创建报告目录，再补素材和页面，完成后构建并检查。不要为单份报告再创建仓库或桌面启动器。</p>
         </div>
         <pre><code>npm run new-report -- &lt;id&gt; &lt;标题&gt;
 npm run check

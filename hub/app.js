@@ -46,15 +46,19 @@ function renderCard(report) {
   return `
     <article class="card ${state}">
       <div class="card-top">
-        <span class="state">${stateLabel(state)}</span>
+        <span class="state" data-state="${state}">${stateLabel(state)}</span>
         <span class="id">${report.id}</span>
       </div>
-      <h2>${report.title}</h2>
-      <p class="subtitle">${report.subtitle || ""}</p>
-      <div class="tags">${tags}</div>
-      <div class="actions">
-        ${openButton}
-        ${folderButton}
+      <div class="card-main">
+        <div>
+          <h2>${report.title}</h2>
+          <p class="subtitle">${report.subtitle || ""}</p>
+          <div class="tags">${tags}</div>
+        </div>
+        <div class="actions">
+          ${openButton}
+          ${folderButton}
+        </div>
       </div>
       ${buildHint}
       ${note}
