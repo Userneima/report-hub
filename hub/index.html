@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Hub</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="label">Unified Web PPT Workspace</p>
+          <h1>报告中心</h1>
+          <p class="hero-copy">
+            一个入口管理所有网页汇报：打开、检查、归档、沉淀制作规则。以后新增报告优先加入这里，而不是继续堆桌面启动器。
+          </p>
+        </div>
+        <aside class="status-panel" aria-label="workspace status">
+          <span class="status-number" id="reportCount">--</span>
+          <span class="status-text">managed reports</span>
+        </aside>
+      </section>
+
+      <section class="toolbar">
+        <button class="filter active" data-filter="all">全部</button>
+        <button class="filter" data-filter="ready">可打开</button>
+        <button class="filter" data-filter="needs-build">需构建</button>
+        <button class="filter" data-filter="missing">缺失</button>
+      </section>
+
+      <section class="grid" id="reportGrid" aria-live="polite"></section>
+
+      <section class="guide">
+        <div>
+          <h2>长期规则</h2>
+          <p>新增网页 PPT 时，只需要把项目放入 GitHub 文件夹，再加一条配置。汇报结束后用归档脚本压缩，不直接删除源文件。</p>
+        </div>
+        <pre><code>npm run check
+npm run build -- &lt;report-id&gt;
+npm run archive -- &lt;report-id&gt;</code></pre>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Swiss modernism × cyber minimalism (strict)
+     - Base: oklch(0.145 0 0)
+     - Accent: oklch(0.78 0.18 190)
+     - Typography: Unbounded (display) + Noto Sans SC (body)
+  */
+  --radius: 0.625rem;
+
+  --font-display: "Unbounded", ui-sans-serif, system-ui;
+  --font-body: "Noto Sans SC", ui-sans-serif, system-ui;
+
+  /* Core colors */
+  --bg-deep: oklch(0.145 0 0);
+  --accent-cyan: oklch(0.78 0.18 190);
+  --accent-violet: oklch(0.627 0.265 303.9);
+
+  /* shadcn semantic tokens (dark-first) */
+  --background: var(--bg-deep);
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.19 0 0);
+  --card-foreground: var(--foreground);
+
+  --popover: oklch(0.19 0 0);
+  --popover-foreground: var(--foreground);
+
+  --primary: var(--accent-cyan);
+  --primary-foreground: var(--bg-deep);
+
+  --secondary: oklch(0.23 0 0);
+  --secondary-foreground: var(--foreground);
+
+  --muted: oklch(0.23 0 0);
+  --muted-foreground: oklch(0.78 0 0);
+
+  --accent: oklch(0.23 0 0);
+  --accent-foreground: var(--foreground);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--accent-cyan);
+
+  --chart-1: var(--accent-cyan);
+  --chart-2: oklch(0.76 0.16 140);
+  --chart-3: oklch(0.7 0.19 260);
+  --chart-4: var(--accent-violet);
+  --chart-5: oklch(0.82 0.18 90);
+
+  --sidebar: oklch(0.165 0 0);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--accent-cyan);
+  --sidebar-primary-foreground: var(--bg-deep);
+  --sidebar-accent: oklch(0.23 0 0);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--accent-cyan);
+}
+
+/* Force dark semantics for the entire app (ThemeProvider default = dark) */
+.dark {
+  --background: var(--bg-deep);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.19 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.19 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: var(--accent-cyan);
+  --primary-foreground: var(--bg-deep);
+  --secondary: oklch(0.23 0 0);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.23 0 0);
+  --muted-foreground: oklch(0.78 0 0);
+  --accent: oklch(0.23 0 0);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--accent-cyan);
+}
+
+:root:not(.dark) {
+  color-scheme: dark;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: "ss01" 1, "ss02" 1;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Swiss modernism × cyber minimalism — utilities */
+/* -------------------------------------------------------------------------- */
+
+.bg-cyber-grid {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, color-mix(in oklch, var(--accent-violet) 28%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, color-mix(in oklch, var(--accent-cyan) 18%, transparent), transparent 58%),
+    linear-gradient(to bottom, oklch(0.145 0 0), oklch(0.13 0 0));
+}
+
+/* hairline Swiss grid overlay */
+.bg-cyber-grid::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, oklch(1 0 0 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(1 0 0 / 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 30% 10%, black 0%, transparent 55%);
+  opacity: 0.6;
+}
+
+.text-cyan { color: var(--accent-cyan); }
+.border-hairline { border-color: var(--border); }
+
+.glow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 6px color-mix(in oklch, var(--accent-cyan) 22%, transparent),
+    0 0 18px color-mix(in oklch, var(--accent-cyan) 38%, transparent);
+}
+
+.card-glass {
+  background: color-mix(in oklch, white 3%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+/* Export mode: hide interactive UI, flatten backgrounds for clean capture */
+.exporting header,
+.exporting .export-control,
+.exporting .fixed {
+  display: none !important;
+}
+
+.exporting .bg-cyber-grid::before {
+  display: none;
+}
+
+.exporting .scroll-mt-28 {
+  scroll-margin-top: 0;
+}

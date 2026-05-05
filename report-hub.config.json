@@ -1,0 +1,59 @@
+{
+  "workspaceName": "Yuchao Report Hub",
+  "reportsRoot": "/Users/yuchao/Documents/GitHub/report-hub/reports",
+  "reports": [
+    {
+      "id": "smart-glasses",
+      "title": "AI 眼镜报告",
+      "subtitle": "Ray-Ban Meta / AI Glasses presentation",
+      "path": "reports/smart-glasses",
+      "entry": "dist/index.html",
+      "fallbackEntry": "index.html",
+      "repo": "https://github.com/Userneima/Smart-Glasses.git",
+      "status": "active",
+      "tags": ["PPT", "AI Glasses", "Vite"],
+      "buildCommand": "npm run build",
+      "devCommand": "npm run dev -- --port 5185 --strictPort",
+      "notes": "已复制进统一仓库目录；原始线上仓库保留为历史来源，后续以 report-hub 为统一远程。"
+    },
+    {
+      "id": "feishu-recorder",
+      "title": "Feishu Recorder",
+      "subtitle": "飞书 × 安克 AI 录音豆产品调研报告",
+      "path": "reports/feishu-recorder",
+      "entry": "dist/index.html",
+      "repo": "",
+      "status": "active",
+      "tags": ["PPT", "Feishu", "Recorder"],
+      "buildCommand": "npm run build",
+      "devCommand": "npm run dev",
+      "notes": "已复制进统一仓库目录；原始目录没有 .git 远程信息，后续以 report-hub 为统一远程。"
+    },
+    {
+      "id": "agibot-security",
+      "title": "具身安保报告",
+      "subtitle": "Agibot / Certis embodied security report",
+      "path": "reports/agibot-security",
+      "entry": "dist/index.html",
+      "repo": "https://github.com/Userneima/agibot-embodied-security-report.git",
+      "status": "active",
+      "tags": ["PPT", "Embodied AI", "Security"],
+      "buildCommand": "npm run build",
+      "devCommand": "npm run dev",
+      "notes": "已复制进统一仓库目录；原始线上仓库保留为历史来源，后续以 report-hub 为统一远程。"
+    },
+    {
+      "id": "embodied-robot",
+      "title": "机器人与具身 AI 调研报告",
+      "subtitle": "Embodied robot investigation",
+      "path": "reports/embodied-robot",
+      "entry": "dist/index.html",
+      "repo": "",
+      "status": "active",
+      "tags": ["PPT", "Robot", "Embodied AI"],
+      "buildCommand": "npm run build",
+      "devCommand": "npm run dev",
+      "notes": "已复制进统一仓库目录；原始目录没有 .git 远程信息，后续以 report-hub 为统一远程。"
+    }
+  ]
+}
