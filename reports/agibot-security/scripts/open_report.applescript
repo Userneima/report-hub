@@ -1,8 +1,7 @@
 -- AgiBot × Certis Report Launcher
 -- Double-click to start dev server and open report in browser
 
--- Resolve repo on the current user's Desktop (folder name must match checkout)
-set projectPath to (POSIX path of (path to desktop folder)) & "agibot-embodied-security-report"
+set projectPath to "/Users/yuchao/Documents/GitHub/report-hub/reports/agibot-security"
 set scriptPath to projectPath & "/scripts/open_report.sh"
 
 try
