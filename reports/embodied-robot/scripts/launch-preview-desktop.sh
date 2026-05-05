@@ -9,7 +9,7 @@ if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   . "$HOME/.nvm/nvm.sh"
 fi
 
-PROJECT="/Users/yuchao/Documents/GitHub/Embodied Robot Investigation"
+PROJECT="$(cd "$(dirname "$0")/.." && pwd)"
 LOG="/tmp/embodied_robot_report_preview.log"
 cd "$PROJECT"
 

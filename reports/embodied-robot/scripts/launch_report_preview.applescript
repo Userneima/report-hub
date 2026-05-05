@@ -1,7 +1,7 @@
 -- Desktop launcher: install/build if needed, start vite preview on 4173, open browser.
 -- Relies on scripts/launch-preview-desktop.sh for a full login-style PATH (Homebrew/nvm).
 
-set projectPath to "/Users/yuchao/Documents/GitHub/Embodied Robot Investigation"
+set projectPath to "/Users/yuchao/Documents/GitHub/report-hub/reports/embodied-robot"
 set targetUrl to "http://127.0.0.1:4173/"
 set logFile to "/tmp/embodied_robot_report_preview.log"
 set launcher to projectPath & "/scripts/launch-preview-desktop.sh"

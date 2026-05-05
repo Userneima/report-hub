@@ -2,7 +2,7 @@
 -- It installs dependencies if needed, starts Vite in background,
 -- waits for localhost:5180, then opens browser.
 
-set projectPath to "/Users/yuchao/Documents/GitHub/Embodied Robot Investigation"
+set projectPath to "/Users/yuchao/Documents/GitHub/report-hub/reports/embodied-robot"
 set targetUrl to "http://localhost:5180"
 set logFile to "/tmp/embodied_robot_report_dev.log"
 set ready to false
