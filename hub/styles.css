@@ -10,6 +10,9 @@
   --accent: #2f6f5e;
   --accent-2: #9b4d2f;
   --shadow: 0 18px 48px rgba(52, 42, 25, 0.09);
+  --font-zh: "PingFang SC", "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+  --font-latin: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 }
 
 * {
@@ -20,7 +23,7 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  font-family: "IBM Plex Sans", "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  font-family: var(--font-latin), var(--font-zh);
   background:
     linear-gradient(rgba(31, 37, 33, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(31, 37, 33, 0.035) 1px, transparent 1px),
@@ -50,6 +53,7 @@ body {
 .label {
   margin: 0 0 12px;
   color: var(--muted);
+  font-family: var(--font-latin), var(--font-zh);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -58,10 +62,10 @@ body {
 
 h1 {
   margin: 0;
-  font-family: "Songti SC", "STSong", serif;
+  font-family: var(--font-zh);
   font-size: clamp(42px, 6vw, 72px);
   font-weight: 900;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 .hero-copy {
@@ -103,6 +107,7 @@ h1 {
 }
 
 .status-number {
+  font-family: var(--font-latin), var(--font-zh);
   font-size: 52px;
   font-weight: 900;
   line-height: 0.9;
@@ -210,14 +215,14 @@ h1 {
 .id {
   color: var(--muted);
   font-size: 11px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
 }
 
 .card h2 {
   margin: 0 0 6px;
   font-size: clamp(22px, 3vw, 30px);
   line-height: 1.12;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .card-main {
@@ -280,7 +285,7 @@ h1 {
 }
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
 }
 
 .hero-copy code {
