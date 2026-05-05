@@ -12,6 +12,7 @@ npm run check
 npm run list
 npm run build -- smart-glasses
 npm run archive -- smart-glasses
+npm run new-report -- ai-product-review AI 产品调研报告
 ```
 
 ## 当前报告状态
@@ -32,6 +33,22 @@ npm run archive -- smart-glasses
 3. 确认压缩包可打开后，再决定是否清理该报告的 `node_modules/`。
 
 `archive` 命令只压缩，不删除，避免误伤源项目。
+
+## 新建报告
+
+以后新报告不要新建仓库，直接运行：
+
+```bash
+npm run new-report -- <report-id> <报告标题>
+```
+
+例如：
+
+```bash
+npm run new-report -- ai-product-review AI 产品调研报告
+```
+
+脚本会自动创建 `reports/<report-id>/`，并把配置写入 `report-hub.config.json`。
 
 ## GitHub 统一仓库
 

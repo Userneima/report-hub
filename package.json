@@ -8,6 +8,7 @@
     "check": "node scripts/report-hub.mjs check",
     "list": "node scripts/report-hub.mjs list",
     "archive": "node scripts/report-hub.mjs archive",
-    "build": "node scripts/report-hub.mjs build"
+    "build": "node scripts/report-hub.mjs build",
+    "new-report": "node scripts/new-report.mjs"
   }
 }
